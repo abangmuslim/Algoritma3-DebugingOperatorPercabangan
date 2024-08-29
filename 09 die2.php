@@ -1,13 +1,12 @@
 <?php
-// Penggunaan Dasar fungsi die()
-if (file_exists('file_important.txt')) {
-    echo "File ditemukan.";
-} else {
-    die("Error: File tidak ditemukan, dan logika selanjutnya tidak akan dieksekusi.");
+
+
+// Menambahkan Status HTTP
+if (!file_exists('file_important.txt')) {
+    header('HTTP/1.1 403 Forbidden');
+    die("Error: Kamu tidak memiliki akses.");
 }
-
-
-// // Menggabungkan dengan fungsi exit()
+// Menggabungkan dengan fungsi exit()
 // if ($koneksi_database == false) {
 //     exit(1); // menghentikan skrip dengan kode keluar 1
 // }
